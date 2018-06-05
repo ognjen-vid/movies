@@ -92,7 +92,6 @@ app.controller("moviesCtrl", function ($scope, $location, $http, $routeParams, D
 
         var promise = $http.get(URLmovies, config);
         console.log(config);
-        console.log($scope.newMovie.Actors);
         promise.then(
             function success(response) {
                 console.log(response.data)
@@ -107,6 +106,7 @@ app.controller("moviesCtrl", function ($scope, $location, $http, $routeParams, D
     };
 
     getMovies();
+    console.log($scope.newMovie.Actors);
 
     $scope.save = function () {
         if ($scope.newMovie.Id == null) {
@@ -144,13 +144,13 @@ app.controller("moviesCtrl", function ($scope, $location, $http, $routeParams, D
 
     $scope.add = function () {
         $scope.newMovie.Actors.push($scope.newActor);
+        $scope.newActor = null;
         console.log($scope.newMovie.Actors);
     };
 
     $scope.finish = function () {
         $location.path('/movies');
     }
-
 
     $scope.editHere = function (Id) {
         var promise = $http.get(URLmovies + "/" + Id);
@@ -282,13 +282,3 @@ app.controller("movieDetailsCtrl", function ($scope, $location, $http, $routePar
     };
 
 });
-
-//==============================================================================================
-//								ACTORS CONTROLLER
-//==============================================================================================
-app.controller("actorsCtrl", function ($scope, $location, $http, $routeParams, DataShare) {
-
-   
-
-});
-
