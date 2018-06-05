@@ -4,83 +4,41 @@
         <h3>
             Actors
         </h3>
-        <button class="btn btn-success" ng-click="changeView()">
-            <span class="{{iconClass}}"></span>{{option}}
-        </button>
     </div>
 
-    <div id="saveEntity" class="container-fluid" ng-show="show">
+    <div id="saveEntity" class="container-fluid">
         <form class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
-            <legend>{{optionText}}</legend>
             <div class="form-group">
-                <label for="Title">Title</label>
-                <input class="form-control" id="Title" type="text" ng-model="newMovie.Title">
+                <label for="Name">Name</label>
+                <input class="form-control" id="Name" type="text" ng-model="newActor.Name">
             </div>
             <div class="form-group">
-                <label for="Year">Year</label>
-                <input class="form-control" id="Year" type="text" ng-model="newMovie.Year">
-            </div>
-            <div class="form-group">
-                <label for="Genres">Genres</label>
-                <input class="form-control" id="Genres" type="text" ng-model="newMovie.Genres">
-            </div>
-            <div class="form-group">
-                <label for="Country">Country</label>
-                <input class="form-control" id="Country" type="text" ng-model="newMovie.Country">
-            </div>
-            <div class="form-group">
-                <label for="Language">Language</label>
-                <input class="form-control" id="Language" type="text" ng-model="newMovie.Language">
-            </div>
-            <div class="form-group">
-                <label for="ReleaseDate">ReleaseDate</label>
-                <input class="form-control" id="ReleaseDate" type="date" ng-model="newMovie.ReleaseDate">
-            </div>
-            <div class="form-group">
-                <label for="Storyline">Storyline</label>
-                <input class="form-control" id="Storyline" type="text" ng-model="newMovie.Storyline">
-            </div>
-            <div class="form-group">
-                <label for="Directors">Directors</label>
-                <input class="form-control" id="Directors" type="text" ng-model="newMovie.Directors">
-            </div>
-            <div class="form-group">
-                <label for="Actors">Actors</label>
-                <input class="form-control" id="Actors" type="text" ng-model="newMovie.Actors">
+                <label for="Character">Character</label>
+                <input class="form-control" id="Character" type="text" ng-model="newActor.Character">
             </div>
             <button class="pull-right btn btn-primary" ng-click="save()"><span class="glyphicon glyphicon-floppy-save"></span>Sačuvaj</button>
         </form>
     </div>
 
-    <div class="pull-right container-fluid">
+    <!--<div class="pull-right container-fluid">
         <button class="btn btn-primary" ng-click="prev()" ng-disabled="pageNum == 0"><span class="glyphicon glyphicon-chevron-left"></span>Prethodna</button>
         <button class="btn btn-primary" ng-click="next()" ng-disabled="pageNum == TotalPages-1">Sledeća<span class="glyphicon glyphicon-chevron-right"></span></button>
-    </div>
+    </div>-->
 
     <div class="container-fluid">
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Year</th>
+                    <th>Name</th>
+                    <th>Character</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="task-item" ng-repeat="m in movies">
-                    <td>{{m.Id}}</td>
-                    <td>{{m.Title}}</td>
-                    <td>{{m.Year}}</td>
-                    <td>
-                        <button class="btn btn-info" ng-click="view(m.Id)"><span class="glyphicon glyphicon-eye-open"></span>Vidi detalje</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-warning" ng-click="editHere(m.Id)"><span class="glyphicon glyphicon-pencil"></span>Izmeni ovde</button>
-                        <button class="btn btn-danger" ng-click="delete(m.Id)"><span class="glyphicon glyphicon-trash"></span>Obriši</button>
-                    </td>
+                <tr ng-repeat="a in actorsByMovie">
+                    <td>{{a.Name}}</td>
+                    <td>{{a.Character}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
-
 </div>

@@ -47,8 +47,7 @@
                 <input class="form-control" id="Directors" type="text" ng-model="newMovie.Directors">
             </div>
             <div class="form-group">
-                <label for="Actors">Actors</label>
-                <input class="form-control" id="Actors" type="text" ng-model="newMovie.Actors">
+                <button class="pull-left btn btn-primary" ng-click="AddActors(m.Id)"><span class="glyphicon glyphicon-plus"></span>Add Cast</button>
             </div>
             <button class="pull-right btn btn-primary" ng-click="save()"><span class="glyphicon glyphicon-floppy-save"></span>Sačuvaj</button>
         </form>

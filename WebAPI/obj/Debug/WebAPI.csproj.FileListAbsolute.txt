@@ -390,3 +390,4 @@ C:\Users\Coons\Desktop\New folder\movies\WebAPI\obj\Debug\WebAPI.csproj.CoreComp
 C:\Users\Coons\Desktop\New folder\movies\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
 C:\Users\Coons\Desktop\New folder\movies\WebAPI\obj\Debug\WebAPI.dll
 C:\Users\Coons\Desktop\New folder\movies\WebAPI\obj\Debug\WebAPI.pdb
+C:\Users\Coons\Desktop\New folder\movies\WebAPI\obj\Debug\WebAPI.csprojResolveAssemblyReference.cache

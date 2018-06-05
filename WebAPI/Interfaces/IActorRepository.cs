@@ -12,8 +12,6 @@ namespace WebAPI.Interfaces
         IEnumerable<Actor> GetAll();
         Actor GetById(int id);
         void Add(Actor actor);
-        void Delete(Actor actor);
-        void Edit(Actor actor);
         IEnumerable<Actor> GetByMovieId(int id);
     }
 }

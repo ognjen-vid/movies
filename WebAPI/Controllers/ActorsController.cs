@@ -49,31 +49,12 @@ namespace WebAPI.Controllers
         }
 
         // GET: api/Actors/MovieId/5
-        [Route("actors/MovieId/{movieId}")]
+        [Route("api/actors/MovieId/{movieId}")]
         [HttpGet]
         public IHttpActionResult GetActorsByMovieId(int movieId)
         {
             var actors = _actorRepo.GetByMovieId(movieId).AsQueryable().ProjectTo<ActorDTO>();
             return Ok(actors);
-        }
-
-
-        // PUT: api/Actors/5
-        public IHttpActionResult PutActor(int id, Actor actor)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != actor.Id)
-            {
-                return BadRequest();
-            }
-
-            _actorRepo.Edit(actor);
-
-            return StatusCode(HttpStatusCode.NoContent);
         }
 
         // POST: api/Actors
@@ -87,20 +68,6 @@ namespace WebAPI.Controllers
             _actorRepo.Add(actor);
 
             return CreatedAtRoute("DefaultApi", new { id = actor.Id }, actor);
-        }
-
-        // DELETE: api/Actors/5
-        public IHttpActionResult DeleteActor(int id)
-        {
-            Actor actor = _actorRepo.GetById(id);
-            if (actor == null)
-            {
-                return NotFound();
-            }
-
-            _actorRepo.Delete(actor);
-
-            return Ok(actor);
         }
     }
 }

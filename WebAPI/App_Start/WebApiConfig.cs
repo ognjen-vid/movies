@@ -32,8 +32,7 @@ namespace WebAPI
                 cfg.CreateMap<Movie, MovieDTO>()
                     .ForMember(dto => dto.ReleaseDate, opt => opt.MapFrom(movie => movie.ReleaseDate.ToString()));
                 cfg.CreateMap<MovieDTO, Movie>();
-                cfg.CreateMap<Actor, ActorDTO>()
-                   .ForMember(dto => dto.MovieTitle, opt => opt.MapFrom(actor => actor.Movie.Title));
+                cfg.CreateMap<Actor, ActorDTO>();
                 cfg.CreateMap<ActorDTO, Actor>();
             });
 

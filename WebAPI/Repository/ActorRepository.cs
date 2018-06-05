@@ -46,21 +46,9 @@ namespace WebAPI.Repository
             db.SaveChanges();
         }
 
-        public void Delete(Actor actor)
-        {
-            db.Actors.Remove(actor);
-            db.SaveChanges();
-        }
-
-        public void Edit(Actor actor)
-        {
-            db.Entry(actor).State = EntityState.Modified;
-            db.SaveChanges();
-        }
-
         public IEnumerable<Actor> GetByMovieId(int id)
         {
-            return db.Actors;
+            return db.Actors.Where(a => a.Movie.Id == id);
         }
     }
 }

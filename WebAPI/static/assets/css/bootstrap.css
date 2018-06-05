@@ -2778,13 +2778,13 @@ select[multiple].input-lg {
   font-size: 18px;
   line-height: 1.3333333;
 }
-.has-fee_actorRepoack {
+.has-feedback {
   position: relative;
 }
-.has-fee_actorRepoack .form-control {
+.has-feedback .form-control {
   padding-right: 42.5px;
 }
-.form-control-fee_actorRepoack {
+.form-control-feedback {
   position: absolute;
   top: 0;
   right: 0;
@@ -2796,16 +2796,16 @@ select[multiple].input-lg {
   text-align: center;
   pointer-events: none;
 }
-.input-lg + .form-control-fee_actorRepoack,
-.input-group-lg + .form-control-fee_actorRepoack,
-.form-group-lg .form-control + .form-control-fee_actorRepoack {
+.input-lg + .form-control-feedback,
+.input-group-lg + .form-control-feedback,
+.form-group-lg .form-control + .form-control-feedback {
   width: 46px;
   height: 46px;
   line-height: 46px;
 }
-.input-sm + .form-control-fee_actorRepoack,
-.input-group-sm + .form-control-fee_actorRepoack,
-.form-group-sm .form-control + .form-control-fee_actorRepoack {
+.input-sm + .form-control-feedback,
+.input-group-sm + .form-control-feedback,
+.form-group-sm .form-control + .form-control-feedback {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -2837,7 +2837,7 @@ select[multiple].input-lg {
   background-color: #dff0d8;
   border-color: #3c763d;
 }
-.has-success .form-control-fee_actorRepoack {
+.has-success .form-control-feedback {
   color: #3c763d;
 }
 .has-warning .help-block,
@@ -2867,7 +2867,7 @@ select[multiple].input-lg {
   background-color: #fcf8e3;
   border-color: #8a6d3b;
 }
-.has-warning .form-control-fee_actorRepoack {
+.has-warning .form-control-feedback {
   color: #8a6d3b;
 }
 .has-error .help-block,
@@ -2897,13 +2897,13 @@ select[multiple].input-lg {
   background-color: #f2dede;
   border-color: #a94442;
 }
-.has-error .form-control-fee_actorRepoack {
+.has-error .form-control-feedback {
   color: #a94442;
 }
-.has-fee_actorRepoack label ~ .form-control-fee_actorRepoack {
+.has-feedback label ~ .form-control-feedback {
   top: 25px;
 }
-.has-fee_actorRepoack label.sr-only ~ .form-control-fee_actorRepoack {
+.has-feedback label.sr-only ~ .form-control-feedback {
   top: 0;
 }
 .help-block {
@@ -2958,7 +2958,7 @@ select[multiple].input-lg {
     position: relative;
     margin-left: 0;
   }
-  .form-inline .has-fee_actorRepoack .form-control-fee_actorRepoack {
+  .form-inline .has-feedback .form-control-feedback {
     top: 0;
   }
 }
@@ -2985,7 +2985,7 @@ select[multiple].input-lg {
     text-align: right;
   }
 }
-.form-horizontal .has-fee_actorRepoack .form-control-fee_actorRepoack {
+.form-horizontal .has-feedback .form-control-feedback {
   right: 15px;
 }
 @media (min-width: 768px) {
@@ -4421,7 +4421,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     position: relative;
     margin-left: 0;
   }
-  .navbar-form .has-fee_actorRepoack .form-control-fee_actorRepoack {
+  .navbar-form .has-feedback .form-control-feedback {
     top: 0;
   }
 }
