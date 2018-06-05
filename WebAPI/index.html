@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="/static/assets/js/angular.js"></script>
+    <script type="text/javascript" src="/static/assets/js/angular-route.min.js"></script>
+    <script type="text/javascript" src="/static/app/js/main.js"></script>
+
+    <script type="text/javascript" src="/static/assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/assets/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/app/css/mojstil.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar">
+            <ul class="nav nav-pills">
+                <li><a href="#!/movies">Movies</a></li>
+                <li><a href="#!/actors">Actors</a></li>
+            </ul>
+        </nav>
+        <div ng-app="ppa">
+            <div ng-view></div>
+        </div>
+    </div>
+
+</body>
+</html>
