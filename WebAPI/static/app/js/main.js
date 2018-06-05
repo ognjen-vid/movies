@@ -23,16 +23,25 @@ app.config(["$routeProvider", function($routeProvider) {
 //Data-share via service
 app.service("DataShare", function(){
     var id = "";
-	
+    var actors = [];
+
 	var addId = function(mId) {
 		id = mId;
 	};
 
 	var getId = function(){
 		return id;
-	};
+    };
 
-	return {addId: addId, getId: getId};
+    var addActors = function () {
+        id = mId;
+    };
+
+    var getId = function () {
+        return id;
+    };
+
+	return {addId: addId, getId: getId, };
 
 });
 
@@ -60,10 +69,14 @@ app.controller("moviesCtrl", function ($scope, $location, $http, $routeParams, D
     $scope.newMovie.ReleaseDate = "";
     $scope.newMovie.Storyline = "";
     $scope.newMovie.Directors = "";
-    $scope.newMovie.Actors = "";
+    $scope.newMovie.Actors = [];
 
     $scope.movieName = "";
 
+    $scope.newActor = {};
+    $scope.newActor.Name = "";
+    $scope.newActor.Character = "";
+  
     //==============================================================================================
     //	CRUD METODE
     //==============================================================================================
@@ -79,6 +92,7 @@ app.controller("moviesCtrl", function ($scope, $location, $http, $routeParams, D
 
         var promise = $http.get(URLmovies, config);
         console.log(config);
+        console.log($scope.newMovie.Actors);
         promise.then(
             function success(response) {
                 console.log(response.data)
@@ -124,9 +138,17 @@ app.controller("moviesCtrl", function ($scope, $location, $http, $routeParams, D
         }
     };
 
-    $scope.AddActors = function (mId) {
-        DataShare.addId(mId);
+    $scope.AddActors = function () {
         $location.path('/actors');
+    }
+
+    $scope.add = function () {
+        $scope.newMovie.Actors.push($scope.newActor);
+        console.log($scope.newMovie.Actors);
+    };
+
+    $scope.finish = function () {
+        $location.path('/movies');
     }
 
 
@@ -248,8 +270,6 @@ app.controller("movieDetailsCtrl", function ($scope, $location, $http, $routePar
         );
     };
 
-   
-
     getActors();
     getMovie();
 
@@ -268,42 +288,7 @@ app.controller("movieDetailsCtrl", function ($scope, $location, $http, $routePar
 //==============================================================================================
 app.controller("actorsCtrl", function ($scope, $location, $http, $routeParams, DataShare) {
 
-    URLactors = "/api/actors";
-
-    $scope.movieId = DataShare.getId();
-
-    $scope.newActor = {};
-    $scope.newActor.Name = "";
-    $scope.newActor.Character = "";
-    $scope.newActor.MovieId = $scope.movieId;
-
-    //==============================================================================================
-    //	CRUD METODE
-    //==============================================================================================
-
-    $scope.save = function () {
-        var promise = $http.post(URLactors, $scope.newActor);
-        promise.then(
-            function success(response) {
-                console.log($scope.newActor);
-                alert("Uspesno ste dodali glumca!");
-                $scope.newActor = null;
-                $location.path('/movie_details');
-            },
-            function error(response) {
-                alert("Greska pri dodavanju glumca!");
-                console.log(response.data);
-            }
-       );
-    };
-
-    //==============================================================================================
-    //	DODATNE METODE
-    //==============================================================================================
-
-    $scope.back = function () {
-        $location.path('/movies');
-    };
+   
 
 });
 

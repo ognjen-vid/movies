@@ -26,13 +26,11 @@
             </div>
             <div class="form-group">
                 <label for="Country">Country</label>
-                <select class="form-control" id="Country" ng-options="c as c for c in countries" ng-model="newMovie.Country">
-                </select>
+                <select class="form-control" id="Country" ng-options="c as c for c in countries" ng-model="newMovie.Country"></select>
             </div>
             <div class="form-group">
                 <label for="Language">Language</label>
-                <select class="form-control" id="Language" ng-options="l as l for l in languages" ng-model="newMovie.Language">
-                </select>
+                <select class="form-control" id="Language" ng-options="l as l for l in languages" ng-model="newMovie.Language"></select>
             </div>
             <div class="form-group">
                 <label for="ReleaseDate">ReleaseDate</label>
@@ -46,12 +44,13 @@
                 <label for="Directors">Directors</label>
                 <input class="form-control" id="Directors" type="text" ng-model="newMovie.Directors">
             </div>
-            <div class="form-group">
-                <button class="pull-left btn btn-primary" ng-click="AddActors(m.Id)"><span class="glyphicon glyphicon-plus"></span>Add Cast</button>
-            </div>
+
             <button class="pull-right btn btn-primary" ng-click="save()"><span class="glyphicon glyphicon-floppy-save"></span>Sačuvaj</button>
         </form>
     </div>
+
+    <button class="pull-left btn btn-primary" ng-click="AddActors()"><span class="glyphicon glyphicon-plus"></span>Add Cast</button>
+
 
     <div id="searchEntity" class="container-fluid" ng-show="!show">
         <form class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
